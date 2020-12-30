@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,300&display=swap');
+
+#page-topbar{
+    background-color: #35245c !important;
+}
+.topnav .navbar-nav .nav-link:hover {
+    color: #35245c !important;
+    background-color: transparent;
+}
+
+.active{
+    color: #ff7101 !important;
+}
+
+h4{
+    font-family: 'Montserrat';
+    font-weight: 400 !important;
+    font-size: 18px !important
+}

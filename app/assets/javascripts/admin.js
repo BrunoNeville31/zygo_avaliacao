@@ -1,0 +1,1 @@
+//= require apexcharts/dist/apexcharts.min.js

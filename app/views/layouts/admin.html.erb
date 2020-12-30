@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Livraria da Zygo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Livraria da Zygo - A melhor livraria de todos os Tempos" name="description" />
+    <meta content="Bruno Neville" name="author" />
+    <link rel="shortcut icon" href="/templates/admin/assets/images/favicon.ico">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin' %>   
+    <%= stylesheet_link_tag    'application' %>  
+  </head>   
+    <body data-layout="horizontal" data-topbar="colored">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">   
+
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="index.html" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/img/zygo_logo.png" alt="" height="30">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/img/zygo_logo.png" alt="" height="50">
+                                </span>
+                            </a>
+
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/img/zygo_logo.png" alt="" height="30">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/img/zygo_logo.png" alt="" height="50">
+                                </span>
+                            </a>
+                        </div>
+                        <!--Hamburger Mobile-->
+                        <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+
+                        
+                    </div>
+
+                    <div class="d-flex"> 
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="/templates/admin/horizontal/assets/images/users/avatar-4.jpg" alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ml-1 font-weight-medium font-size-15">
+                                    <%= current_admin.email%>
+                                </span>
+                                <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">                               
+                                <a class="dropdown-item" href="#"><i class="uil uil-user-circle font-size-18 align-middle text-muted mr-1"></i> <span class="align-middle">Perfil</span></a>
+                                <a class="dropdown-item" href="/admins/sign_out"><i class="uil uil-sign-out-alt font-size-18 align-middle mr-1 text-muted"></i> <span class="align-middle">Sair</span></a>
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="topnav">
+
+                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+    
+                            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                <ul class="navbar-nav">
+
+                                    <li class="nav-item">
+                                        <%= link_to admin_root_path, class: "nav-link #{@dashboard}" do%>                                        
+                                            <i class="uil-dashboard mr-2"></i> Dashboard
+                                        <%end%>
+                                    </li>
+                                    <li class="nav-item">
+                                        <%= link_to admin_bookshelf_index_path, class: "nav-link #{@bookshelf}" do%>                                        
+                                            <i class="uil-book-open mr-2"></i> Livros
+                                        <%end%>                                      
+                                    </li>                                  
+    
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+    
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                     <%=yield%>
+
+                    </div> 
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Zygo.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                    Desenvolvido por Bruno Neville
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+        </div>               
+        <div class="rightbar-overlay"></div>  
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'admin' %>
+  </body>
+</html>

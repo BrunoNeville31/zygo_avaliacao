@@ -1,0 +1,31 @@
+<div class="card">                           
+    <div class="card-body p-4"> 
+        <div class="text-center mt-2">
+            <h5 class="text-primary">Bem-vindo a Livaria Zygo</h5>
+            <p class="text-muted">Faça login para acessar o Dashboard</p>
+        </div>
+        <div class="p-2 mt-4">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: 'Digite seu e-mail', id: 'email' %>
+                </div>
+
+                <div class="form-group">                    
+                    <label for="password">Senha</label>
+                    <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: 'Digite sua senha', id: 'password' %>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <%= f.check_box :remember_me, class: 'custom-control-input', id: 'auth-remember-check' %>
+                    <label class="custom-control-label text-secondary" for="auth-remember-check">Lembrar senha</label>
+                </div>
+                
+                <div class="mt-3 text-right">
+                    <%= f.submit "ENTRAR", class: 'btn btn-secondary btn-block w-sm waves-effect waves-light' %>
+                </div>   
+            <%end%>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zygo | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Livraria da Zygo - A melhor livraria de todos os Tempos" name="description" />
+    <meta content="Bruno Neville" name="author" />
+    <link rel="shortcut icon" href="/templates/admin/assets/images/favicon.ico">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'admin_devise' %>
+    <%= stylesheet_link_tag    'application' %>
+    
+    
+  </head>
+
+  <body class="authentication-bg">   
+
+    <div class="home-btn d-none d-sm-block">
+            <a href="index.html" class="text-dark"><i class="mdi mdi-home-variant h2"></i></a>
+        </div>
+        <div class="account-pages my-5 pt-sm-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <a href="index.html" class="mb-5 d-block auth-logo">
+                                <img src="/img/zygo_logo.png" alt="" height="50" class="logo logo-dark">
+                                <img src="/img/zygo_logo.png" alt="" height="50" class="logo logo-light">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <%=yield%>
+
+                        <div class="mt-5 text-center text-blank">
+                            <p>© 2020 Desenvolvido por Bruno Neville</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <%= javascript_include_tag 'admin_devise' %>
+  </body>
+</html>
