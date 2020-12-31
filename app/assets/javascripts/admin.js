@@ -37,7 +37,6 @@ $(document).ready(
     } 
 );  
 
-
 // View bookshelf new
 document.getElementById("validationImage").addEventListener("change", readImage, false);
 
