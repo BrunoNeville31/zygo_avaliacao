@@ -1,17 +1,137 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Livaria da Zygo</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="Livraria da Zygo - A melhor livraria de todos os Tempos" name="description" />
+        <meta content="Bruno Neville" name="author" />     
+        <link rel="shortcut icon" href="/templates/site/assets/img/favicon.ico" type="image/x-icon">
+        
+        <title>Livaria da Zygo</title>
 
-    <%= stylesheet_link_tag    'site' %>
-    
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+
+
+        <%= stylesheet_link_tag    'application' %>
+        <%= stylesheet_link_tag    'site' %>
   </head>
 
-  <body>
-    <%= yield %>
-site
+<body>
+
+
+    <!-- Main Wrapper Start Here -->
+    <div class="wrapper bg--zircon-light color-scheme-1">
+        <!-- Header Area Start Here -->
+        <header class="header header-3">
+            <div class="header-top header-3--top">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 text-lg-left text-center"></div>
+                        <div class="col-lg-6 text-right">                            
+                            <div class="header-top__nav header-top__nav--1 d-flex justify-content-lg-end justify-content-center">                                
+                                <div class="language-selector header-top__nav--item">
+                                    <div class="dropdown header-top__dropdown">
+                                        <%= link_to admin_root_path, class: 'text-secondary' do%>
+                                            <i class="fa fa-user"></i> Áera do Admnistrador
+                                        <%end%>                                        
+                                    </div>
+                                </div>
+                            </div>                                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle header-3--middle color-zygo d-flex align-items-center">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 text-lg-left text-center">                            
+                            <a href="index.html" class="logo-box">
+                                <img src="/img/zygo_logo.png" alt="" height="70">
+                            </a>                           
+                        </div>
+                        <div class="col-lg-6">
+                           <%= form_with(url: show_path, local: true, method: :get,html: {id: 'form-search-book'}) do |form| %>
+                                <select class="js-example-disabled" name="book" id="select2" style="width: 100%; border-color: white;" onchange="searchbook()">
+                                    <option value="" selected></option>
+                                    <%= @books.each do |book| %>
+                                        <option value="<%=book.id%>">Autor: <%=book.author%> | Título: <%=book.title%> | Desc.: <%= sanitize book.description.truncate(50)%></option>
+                                    <%end%>
+                                </select>
+                            <%end%>
+                            <p class="search-text">Encontre por Título, Descrição ou Autor</p>
+                        </div>
+                        <div class="col-lg-3">                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom header-3--bottom">
+                <div class="container">
+                    <div class="row custom-row">
+                        <div class="col-lg-3">
+                            <div class="header-bottom-left">
+
+                                <div class="category-mobile-menu"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <nav class="main-navigation main-navigation-2">
+                                <!-- Mainmenu Start -->
+                                <ul class="mainmenu mainmenu--3">                                    
+                                    <li class="mainmenu__item">
+                                        <a href="/" class="mainmenu__link">Shop</a>
+                                    </li>                                   
+                                </ul>
+                                <!-- Mainmenu End -->
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex d-lg-none">                            
+                            <div class="mobile-menu mobile-menu--3"></div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Header Start -->
+            <div class="fixed-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <!-- Sticky Logo Start -->
+                            <a class="sticky-logo" href="index.html">
+                                <img src="/templates/site/assets/img/logo/logo-white.png" alt="logo">
+                            </a>
+                            <!-- Sticky Logo End -->
+                        </div>
+                        <div class="col-lg-9">                            
+                            <nav class="sticky-navigation">
+                                <ul class="mainmenu sticky-menu">                                    
+                                    <li class="mainmenu__item">
+                                        <a href="blog.html" class="mainmenu__link">Shop</a>
+                                    </li>                                    
+                                </ul>
+                                <div class="sticky-mobile-menu">
+                                    <span class="sticky-menu-btn"></span>
+                                </div>
+                            </nav>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>        
+        <main id="content" class="main-content-wrapper">
+            <div class="container">
+                <%= yield %>
+            </div>
+        </main>       
+    </div>
+    
+    <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
-  </body>
+
+</body>
 </html>

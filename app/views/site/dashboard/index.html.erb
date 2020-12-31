@@ -1,2 +1,121 @@
-<h1>Site::Dashboard#index</h1>
-<p>Find me in app/views/site/dashboard/index.html.erb</p>
+ <div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="breadcrumb">
+                    <li><a href="/">Livros</a></li>
+                    <!--<li class="current"><a>Livros</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">        
+        <div class="shop-toolbar">
+            <div class="shop-toolbar__grid-list">
+                <ul class="nav">
+                    <li>
+                        <a data-toggle="tab" href="#grid">
+                            <i class="fa fa-th"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" data-toggle="tab" href="#list">
+                            <i class="fa fa-list"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="shop-toolbar__shorter">
+                <label>Ordenar por:</label>
+                <select class="short-select nice-select">
+                    <option value="1">Nome, A a Z</option>                    
+                    <option value="3">Nome, Z a A</option>                   
+                </select>
+            </div>
+            <span class="shop-toolbar__product-count">Exibindo <%= @books.count %> Livros</span>
+        </div>
+       
+        <div class="main-shop-wrapper">
+            <div class="tab-content" id="myTabContent-2">
+                <div class="tab-pane" id="grid">
+                    <div class="product-grid-view three-column">
+                        <div class="row no-gutters">
+                            <% @books.each do |book|%>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="product-box product-box-hover-down bg--white color-1">
+                                        <div class="product-box__img">                                            
+                                            <%= image_tag(has_book_face(book.id), class: 'primary-image')%>
+                                            <%= image_tag(has_book_face(book.id), class: 'secondary-image')%>
+                                            <a href="#" data-toggle="modal" data-target="#productModal" class="product-box__quick-view"><i class="fa fa-search"></i></a>
+                                        </div>
+                                        <div class="product-box__content">
+                                            <h3 class="product-box__title"><a href="single-product.html"><%= book.title%></a></h3>
+                                            <h4><%= sanitize book.description.truncate(150)%></h4>
+                                            <div class="product-box__price">
+                                               Autor: <%= book.author %>
+                                            </div>
+                                        </div>                                       
+                                    </div>
+                                </div>
+                             <%end%>                        
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-12">
+                                <ul class="pagination">
+                                    <li class="prev"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li class="current"><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tab-pane show active" id="list">
+                    <div class="product-list-view">
+                        <% @books.each do |book| %>
+                            <div class="product-box product-box--list bg--white">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="product-box__img">
+                                            <%= image_tag(has_book_face(book.id), class: 'primary-image', style: "max-width: 300px;" )%>
+                                            <%= image_tag(has_book_face(book.id), class: 'secondary-image', style: "max-width: 300px;")%>
+                                            <a href="#" data-toggle="modal" data-target="#productModal" class="product-box__quick-view"><i class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="product-box__content">
+                                            <h3 class="product-box__title"><a href="single-product.html"><%= book.title%></a></h3>
+                                            
+                                            <div class="product-box__price">
+                                                Autor: <%= book.author%>
+                                            </div>
+                                            <p class="product-box__desc">
+                                                <h4><%= sanitize book.description.truncate(150)%></h4>
+                                            </p>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        <%end%>                      
+                        <ul class="pagination">
+                            <li class="prev"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="current"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

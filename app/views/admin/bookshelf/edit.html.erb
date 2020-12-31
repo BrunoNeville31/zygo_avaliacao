@@ -1,2 +1,76 @@
-<h1>Admin::Bookshelf#edit</h1>
-<p>Find me in app/views/admin/bookshelf/edit.html.erb</p>
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0">Livros</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><%= link_to "Livros", admin_bookshelf_index_path, class: 'text-secondary' %></li>
+                    <li class="breadcrumb-item active"><%= @book.title.truncate(10) %></li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div> 
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <%= form_with(url:  admin_bookshelf_path , model: @book, local: true, method: :patch, html: { novalidate: true ,class: 'needs-validation' }) do |form|%>
+                
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationName">Autor</label>
+                                <%= form.text_field :author, class: 'form-control', id: 'validationName', placeholder: 'Nome do Autor', required: true%>
+                                <div class="valid-feedback">
+                                    ok!
+                                </div>
+                                 <div class="invalid-feedback">
+                                    Insira o nome do Autor do Livro.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="validationTitulo">Título</label>
+                                <%= form.text_field :title, class: 'form-control', id: 'validationTitulo', placeholder: 'Título do Livro', required: true%>
+                                <div class="valid-feedback">
+                                    ok!
+                                </div>
+                                 <div class="invalid-feedback">
+                                    Insira o Título do Livro.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">           
+                                <label for="validationImage" >Imagem</label> 
+                                <button id="AnexImagem" type="button" class="btn btn-zygo form-control">Anexar Imagem</button> 
+                                <div class="center">                                
+                                    <label id="nameImage"></label>
+                                </div>                                
+                                <div class="center"> 
+                                    <%=image_tag(has_book_face(@book.id), id: 'preview-img')%>
+                                </div>                                
+                                <%= form.file_field :book_face, class: 'form-control', id: 'validationImage', style: 'display: none;'%>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label for="validationDescription">Descrição</label>
+                                <%= form.hidden_field :description, class: 'form-control', id: 'validationDescription', placeholder: 'Descrição do Livro'%>
+                                <trix-editor input="validationDescription" required></trix-editor>                                
+                            </div>
+                        </div>                        
+                    </div>                    
+                    <%= form.submit "SALVAR", class: 'btn btn-secondary float-right'%>
+                <%end%>
+            </div>
+        </div>
+       
+    </div> 
+</div>

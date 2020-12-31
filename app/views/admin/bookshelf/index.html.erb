@@ -35,12 +35,16 @@
                         <% @books.each do |book| %>
                             <tr>
                                 <td><%=book.id%></td>
-                                <td><%=book.author%></td>
+                                <td><%= author(book.id) %></td>
                                 <td><%=book.title%></td>
                                 <td><%=sanitize book.description%></td>                                
                                 <td style="width: 150px;text-align: center;">
-                                    <button class="btn btn-warning waves-effect waves-light" type="submit"><i class="uil-edit"></i></button>
-                                    <button class="btn btn-danger waves-effect waves-light" type="submit"><i class="uil-trash-alt "></i></button>
+                                    <%= link_to edit_admin_bookshelf_path(book), class: 'btn btn-warning waves-effect waves-light' do %>
+                                        <i class="uil-edit"></i>
+                                    <%end%>
+                                    <%= link_to admin_bookshelf_path(book), class: 'btn btn-danger waves-effect waves-light', method: :delete do %>
+                                        <i class="uil-trash-alt "></i>
+                                    <%end%>
                                 </td>                            
                             </tr>    
                         <%end%>                                                         
