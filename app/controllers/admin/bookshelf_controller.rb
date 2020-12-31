@@ -25,7 +25,7 @@ class Admin::BookshelfController < AdminController
 
   def update
     respond_to do |format|
-      if @book.save!(set_params)
+      if @book.update!(set_params)
         format.html{redirect_to admin_bookshelf_index_path, notice: 'Livro atualizado com Sucesso.'}
       else
         format.html{render :new, notice: 'Erro ao atualizar Livro.'}
@@ -48,7 +48,7 @@ class Admin::BookshelfController < AdminController
   end
 
   def set_params
-    params.require(:book).permit(:name, :author, :title, :description)
+    params.require(:book).permit(:name, :author, :title, :description, :book_face)
   end
 
   def set_active
