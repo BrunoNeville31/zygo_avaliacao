@@ -4,12 +4,50 @@
             <h4 class="mb-0">Livros</h4>
 
             <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                    <!--<li class="breadcrumb-item"><a href="javascript: void(0);" class="text-secondary">Minible</a></li>-->
-                    <li class="breadcrumb-item active">Livros</li>
-                </ol>
+                <%= link_to new_admin_bookshelf_path, class: 'btn btn-secondary waves-effect waves-light' do %>
+                    <i class="uil-plus"></i>
+                <%end%>              
             </div>
 
         </div>
     </div>
 </div> 
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">                            
+
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>ID</th> 
+                            <th>Autor</th>                           
+                            <th>Titulo</th>
+                            <th>Descrição</th>                                                        
+                            <th ></th>
+                        </tr>
+                    </thead>        
+
+                    <tbody>
+                        <% @books.each do |book| %>
+                            <tr>
+                                <td><%=book.id%></td>
+                                <td><%=book.author%></td>
+                                <td><%=book.title%></td>
+                                <td><%=sanitize book.description%></td>                                
+                                <td style="width: 150px;text-align: center;">
+                                    <button class="btn btn-warning waves-effect waves-light" type="submit"><i class="uil-edit"></i></button>
+                                    <button class="btn btn-danger waves-effect waves-light" type="submit"><i class="uil-trash-alt "></i></button>
+                                </td>                            
+                            </tr>    
+                        <%end%>                                                         
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> 
+</div>
