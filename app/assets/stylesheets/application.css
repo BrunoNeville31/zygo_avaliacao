@@ -10,9 +10,71 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require datatables.net-bs4/css/dataTables.bootstrap4.min.css
+ *= require datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css
+ *= require datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css
  *= require bootstrap/dist/css/bootstrap.min.css
  *= require icons.min.css
  *= require app.min.css
+ *= require trix
  *= require_tree .
- *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+
+h4{  
+    font-family: 'Montserrat', sans-serif !important;  
+    font-weight: 400 !important;
+    font-size: 18px !important
+}
+
+h5{  
+    font-family: 'Montserrat', sans-serif !important;  
+}
+
+p{
+    font-family: 'Montserrat', sans-serif !important; 
+}
+
+label{
+    font-family: 'Montserrat', sans-serif !important;  
+    font-weight: 400 !important;
+    font-size: 15px !important
+}
+
+.btn-primary{
+    background-color: #ff7101 !important;
+    border-color: transparent;
+}
+
+.btn-secondary{
+    background-color: #03e2b6 !important;
+    border-color: #6c757d46 !important;
+}
+
+.btn-zygo{
+    background-color: #35245c !important;
+    border-color: transparent;
+    color: white;
+}
+
+.btn-zygo:hover{
+    background-color: #35245c !important;
+    border-color: transparent;
+    color: white;
+}
+
+.form-group label{
+    color: #35245c !important;
+}
+
+.text-blank{
+    color: white;
+}
+
+.text-primary{
+    color: #ff7101 !important;
+}
+
+.text-secondary{
+    color: #35245c !important;
+}
