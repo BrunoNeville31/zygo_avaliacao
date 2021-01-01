@@ -42,7 +42,9 @@ label{
 .btn-zygo{
     background-color: #35245c !important;
     border-color: transparent;
-    color: white;
+    color: white !important;
+    font-size: 13px !important;
+    border-radius: 5px !important;
 }
 
 .btn-zygo:hover{
