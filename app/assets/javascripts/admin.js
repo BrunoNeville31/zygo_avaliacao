@@ -1,4 +1,3 @@
-//= require apexcharts/dist/apexcharts.min.js
 //= require datatables.net/js/jquery.dataTables.min.js
 //= require datatables.net-bs4/js/dataTables.bootstrap4.min.js
 //= require datatables.net-responsive/js/dataTables.responsive.min.js
