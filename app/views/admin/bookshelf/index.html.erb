@@ -37,7 +37,7 @@
                                 <td><%=book.id%></td>
                                 <td><%= author(book.id) %></td>
                                 <td><%=book.title%></td>
-                                <td><%=sanitize book.description%></td>                                
+                                <td><%=sanitize book.description.truncate(50)%></td>                                
                                 <td style="width: 150px;text-align: center;">
                                     <%= link_to edit_admin_bookshelf_path(book), class: 'btn btn-warning waves-effect waves-light' do %>
                                         <i class="uil-edit"></i>
