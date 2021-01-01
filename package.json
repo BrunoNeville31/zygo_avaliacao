@@ -2,6 +2,7 @@
   "name": "bookshelf",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "5.2.1",
     "apexcharts": "^3.23.1",
     "bootstrap": "^4.5.3",
     "datatables.net": "^1.10.23",
@@ -22,5 +23,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Bruno Neville Ribeiro Santos <bruno.santos@qflash.com.br>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.1"
+  }
 }
