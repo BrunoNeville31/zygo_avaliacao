@@ -1,7 +1,13 @@
 class Site::DashboardController < SiteController
-  def index;end
+  def index
+    @books = Book.all
+  end
 
   def show
-    @book_id = Book.find(params[:book])
+    @book = Book.find(params[:book])
+  end
+
+  def order
+    @books = Book.order(title: params[:order].to_sym)  
   end
 end
