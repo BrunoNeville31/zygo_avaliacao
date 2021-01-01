@@ -3,8 +3,7 @@
  *= require datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css
  *= require datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css
  *= require bootstrap/dist/css/bootstrap.min.css
- *= require icons.min.css
- *= require line.css
+ *= require icons.min.css 
  *= require app.min.css
  *= require trix 
  */
