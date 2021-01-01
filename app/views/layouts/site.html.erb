@@ -55,7 +55,7 @@
                            <%= form_with(url: show_path, local: true, method: :get,html: {id: 'form-search-book'}) do |form| %>
                                 <select class="js-example-disabled" name="book" id="select2" style="width: 100%; border-color: white;" onchange="searchbook()">
                                     <option value="" selected></option>
-                                    <%= @books.each do |book| %>
+                                    <%= helper_book().each do |book| %>
                                         <option value="<%=book.id%>">Autor: <%=book.author%> | Título: <%=book.title%> | Desc.: <%= sanitize book.description.truncate(50)%></option>
                                     <%end%>
                                 </select>
