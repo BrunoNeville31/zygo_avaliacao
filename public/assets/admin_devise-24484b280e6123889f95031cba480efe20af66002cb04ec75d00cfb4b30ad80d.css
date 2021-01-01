@@ -1,0 +1,11 @@
+/* line 2, /home/bruno/workspace/zygo/bookshelf/app/assets/stylesheets/admin_devise.scss */
+.authentication-bg {
+  background-color: #35245c !important;
+}
+
+/* line 6, /home/bruno/workspace/zygo/bookshelf/app/assets/stylesheets/admin_devise.scss */
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #03e2b6;
+  background-color: #03e2b6;
+}
