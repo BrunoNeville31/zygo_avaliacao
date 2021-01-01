@@ -20,6 +20,8 @@ Bundler.require(*Rails.groups)
 module Bookshelf
   class Application < Rails::Application
     config.load_defaults 5.2    
+    config.autoload_paths << Rails.root.join('lib')
+    config.eager_load_paths << Rails.root.join('lib')
     config.generators.system_tests = nil
   end
 end
