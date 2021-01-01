@@ -18,9 +18,6 @@ gem 'devise'
 #Editor
 gem 'trix'
 
-#Sass
-gem 'bootstrap-sass'
-
 group :development, :test do
   gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
