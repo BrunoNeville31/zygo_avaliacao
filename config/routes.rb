@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   
   get '/show',to: 'site/dashboard#show'
-  
+  post '/order-exibition', to: 'site/dashboard#order'
   
   namespace :admin do    
     root "dashboard#index"
