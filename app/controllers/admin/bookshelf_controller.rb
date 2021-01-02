@@ -10,22 +10,23 @@ class Admin::BookshelfController < AdminController
     @book = Book.new
   end
 
-  def create
+  def create    
     @book = Book.new(set_params)
     respond_to do |format|
-      if @book.save!(set_params)
+      if @book.save!        
         format.html{redirect_to admin_bookshelf_index_path, notice: 'Livro adicionado com Sucesso.'}
       else
         format.html{render :new, notice: 'Erro ao adicionado Livro.'}
       end
     end
+     
   end
 
   def edit;end
 
   def update
     respond_to do |format|
-      if @book.update!(set_params)
+      if @book.update!(set_params)       
         format.html{redirect_to admin_bookshelf_index_path, notice: 'Livro atualizado com Sucesso.'}
       else
         format.html{render :new, notice: 'Erro ao atualizar Livro.'}
