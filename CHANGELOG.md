@@ -1,3 +1,11 @@
+## v1.0.5
+
+* `Included and Fixed gems and plugins js.`
+* `Initialize test to application.`
+* `Fixed js and css to application Included Toast to message.`
+* `Included central worker msg to toast.`
+* `Fixed back-end application. `
+
 ## v1.0.4
 
 * `Remove Sass to application.`
