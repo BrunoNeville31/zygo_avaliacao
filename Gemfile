@@ -14,6 +14,7 @@ gem 'pg'
 
 # Authenticate
 gem 'devise'
+gem 'devise-i18n'
 
 # Editor
 gem 'trix'
@@ -22,6 +23,8 @@ gem 'trix'
 gem 'webpacker'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'factory_bot_rails'
   gem 'foreman'  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
