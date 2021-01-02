@@ -46,5 +46,10 @@
         </div>
 
     <%= javascript_include_tag 'admin_devise' %>
+    <% if notice.present? %>
+        <script>
+            toastr["info"]("<%= notice %>")
+        </script>
+    <%end%>
   </body>
 </html>

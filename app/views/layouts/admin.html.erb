@@ -130,5 +130,12 @@
         <div class="rightbar-overlay"></div>  
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'admin' %>
+    
+    <% if notice.present? %>
+        <script>
+            toastr["info"]("<%= notice %>")
+        </script>
+    <%end%>
+    
   </body>
 </html>
