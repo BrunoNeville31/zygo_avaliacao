@@ -18,5 +18,7 @@
 //= require waypoints/lib/jquery.waypoints.min.js
 //= require jquery.counterup.min.js
 //= require app.js
+//= require toastr/build/toastr.min.js
+//= require toastr.init.js
 //= require rails-ujs
 //= require activestorage
