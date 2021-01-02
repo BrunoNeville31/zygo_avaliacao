@@ -21,5 +21,6 @@ module Bookshelf
   class Application < Rails::Application
     config.load_defaults 5.2  
     config.generators.system_tests = nil
+    config.i18n.default_locale = :'pt-BR'
   end
 end
